@@ -1,0 +1,29 @@
+<div>
+  <a href="/hello">
+    <div class="w-72 h-72 rounded-2xl flex flex-col cursor-pointer group">
+      <div class="h-3/5 bg-red-200 rounded-t-2xl overflow-hidden">
+        <img
+          class="w-full h-full object-cover rounded-t-2xl group-hover:scale-125 transform duration-300 ease-in-out"
+          [src]="imagePath"
+          alt="real estate property"
+        />
+      </div>
+
+      <div class="p-3 flex flex-col bg-[#6764c8]/25 rounded-b-2xl">
+        <div class="font-bold text-[#6764c8]">{{ propertyName }}</div>
+        <div class="text-xs flex flex-row items-center">
+          <div>
+            <mat-icon class="text-lg text-[#6764c7]">location_on</mat-icon>
+          </div>
+          <span>{{ location }}</span>
+        </div>
+        <div class="text-xs mt-2 flex flex-row items-center text-[#6764c7]">
+          Learn More
+          <div>
+            <mat-icon class="text-lg">chevron_right</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

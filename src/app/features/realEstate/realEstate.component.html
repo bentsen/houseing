@@ -1,0 +1,28 @@
+<div class="w-full p-10">
+  <h1 class="text-3xl">Real Estate houses for sale</h1>
+  <div class="mt-2">
+    <input
+      class="shadow appearance-none border rounded w-72 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      id="username"
+      type="text"
+      placeholder="Search by city"
+    />
+  </div>
+  <div class="flex justify-center items-center mt-5">
+    <div
+      *ngIf="realEstateData && realEstateData.property"
+      class="flex flex-wrap gap-5"
+    >
+      <div *ngFor="let property of realEstateData.property">
+        <a [routerLink]="['/real-estate/'] + property.id">
+          <app-card
+            [propertyName]="property.type"
+            [location]="property.city"
+            [imagePath]="'assets/images/' + property.image"
+          >
+          </app-card>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
