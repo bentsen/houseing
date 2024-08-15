@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import data from '../../../../assets/data/real-estate.json';
-import { RealEstate } from '../../../../types/real-estate';
+import data from '@assets/data/real-estate.json';
+import { RealEstate } from 'types/real-estate';
 
 @Component({
   selector: 'app-realEstate',

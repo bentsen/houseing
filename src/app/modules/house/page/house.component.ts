@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import data from '../../../../assets/data/real-estate.json';
-import { Property } from '../../../../types/real-estate';
+import data from '@assets/data/real-estate.json';
+import { Property } from 'types/real-estate';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Property, RealEstate } from 'types/real-estate';
-import DataTransfer from '../../../../assets/data/real-estate.json';
+import DataTransfer from '@assets/data/real-estate.json';
 
 @Component({
   selector: 'app-home',
