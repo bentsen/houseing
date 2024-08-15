@@ -10,19 +10,24 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('./features/home/home.module').then((m) => m.HomeModule),
+          import('@modules/home/home.module').then((m) => m.HomeModule),
       },
       {
         path: 'about',
         loadChildren: () =>
-          import('./features/about/about.module').then((m) => m.AboutModule),
+          import('@modules/about/about.module').then((m) => m.AboutModule),
       },
       {
         path: 'real-estate',
         loadChildren: () =>
-          import('./features/realEstate/realEstate.module').then(
+          import('@modules/realEstate/realEstate.module').then(
             (m) => m.RealEstateModule
           ),
+      },
+      {
+        path: 'real-estate/:id',
+        loadChildren: () =>
+          import('@modules/house/house.module').then((m) => m.HouseModule),
       },
     ],
   },

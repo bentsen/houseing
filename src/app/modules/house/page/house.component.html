@@ -1,0 +1,51 @@
+<div *ngIf="houseData">
+  <div class="flex flex-row">
+    <div class="w-2/5 p-20">
+      <div>
+        <h1 class="text-4xl">{{ houseData.area }}</h1>
+      </div>
+      <div class="flex flex-row items-center gap-2 mt-2">
+        <h2 class="text-2xl">{{ houseData.city }}</h2>
+        -
+        <span> {{ houseData.address }} </span>
+      </div>
+      <div class="mt-10 flex flex-col gap-2">
+        <span>Price: ${{ houseData.price }}</span>
+        <span>Type: {{ houseData.type }}</span>
+        <span>Floorspace: {{ houseData.floorspace }}</span>
+        <span>Beds: {{ houseData.beds }}</span>
+        <span>Baths: {{ houseData.baths }}</span>
+        <span>Parking: {{ houseData.parking }} </span>
+        <div class="flex flex-row gap-2">
+          Construction:
+          <div class="flex flex-row gap-1">
+            <div
+              *ngFor="let construction of houseData.construction; let i = index"
+            >
+              <span>{{ construction }}</span>
+              <ng-container *ngIf="i < houseData.construction.length - 1"
+                >,</ng-container
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-3/5 p-10 h-[800px]">
+      <img
+        [src]="'assets/images/' + houseData.image"
+        alt="house"
+        class="w-full h-full"
+      />
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!houseData">
+  <div class="w-full h-screen flex flex-col justify-center items-center">
+    <div>
+      <mat-icon class="text-red-500 scale-150">error</mat-icon>
+    </div>
+    No house found
+  </div>
+</div>

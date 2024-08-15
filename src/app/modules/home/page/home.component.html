@@ -1,0 +1,61 @@
+<div class="w-full">
+  <div class="h-screen">
+    <div class="h-2/3 w-full relative">
+      <img src="assets/images/image.png" alt="house" class="w-full h-full" />
+      <div
+        class="absolute inset-0 flex justify-center items-center w-full bg-black opacity-50"
+      ></div>
+      <div
+        class="absolute inset-0 flex flex-col justify-center items-center w-full"
+      >
+        <h1 class="text-white text-5xl">Buy your dream house</h1>
+        <div class="mt-20 w-full flex justify-center">
+          <div
+            class="h-14 w-1/3 bg-white rounded-lg flex justify-between relative"
+          >
+            <input
+              [(ngModel)]="searchQuery"
+              type="text"
+              (focus)="onFocus()"
+              (blur)="onBlur()"
+              [ngClass]="{
+                'rounded-b-none': searchQuery.length > 0 || inputFocused
+              }"
+              class="w-11/12 h-full indent-2 outline-none rounded-lg"
+              placeholder="Search for your dream house"
+            />
+            <div class="flex h-full items-center">
+              <div class="h-3/4 w-0.5 bg-gray-500"></div>
+            </div>
+            <div class="w-1/12 flex items-center justify-center cursor-pointer">
+              <mat-icon>search</mat-icon>
+            </div>
+            <div
+              *ngIf="inputFocused"
+              class="bg-white absolute top-full w-11/12 max-h-52 overflow-y-scroll"
+            >
+              <div *ngFor="let property of filteredProperties">
+                <a [routerLink]="['/real-estate/'] + property.id">
+                  <div
+                    class="hover:bg-gray-100 h-14 cursor-pointer flex flex-row gap-2 items-center p-2 text-xs"
+                  >
+                    <img
+                      [src]="'assets/images/' + property.image"
+                      alt="Property"
+                      class="w-10 h-10"
+                    />
+                    <h3>{{ property.address }}</h3>
+                    -
+                    <p>{{ property.city }}</p>
+                    -
+                    <p>{{ property.type }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
